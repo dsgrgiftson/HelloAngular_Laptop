@@ -1,0 +1,61 @@
+<div>
+
+  <h1>Hey Guys!</h1>
+  <p>How are you doing?</p>
+
+  <div>
+    Below is where I'm located,
+    <div>
+      {{ myObject.location }}
+    </div>
+  </div>
+
+  <br>
+  <div>
+    Below is my Family,
+    <ol>
+      <div *ngFor="let arr of myArr">
+        <li>
+          {{ arr.name }}
+        </li>
+      </div>
+    </ol>
+  </div>
+
+  <br>
+  <div>
+    Below are the Heads of Family,
+    <ol>
+      <div *ngFor="let arr of myArr">
+        <li *ngIf="arr.age > 50">
+          {{ arr.name }}
+        </li>
+      </div>
+    </ol>
+  </div>
+
+  <br>
+  <div>
+    Below are the Youngsters of Family,
+    <ol>
+      <div *ngFor="let arr of myArr">
+        <li *ngIf="arr.age < 30">
+          {{ arr.name }}
+        </li>
+      </div>
+    </ol>
+  </div>
+
+  <br>
+  <div>
+    Below is an example of if else using templates,
+    <ng-template #template1>This fellow is an Engineer</ng-template>
+    <ng-template #template2>This is not an Engineer</ng-template>
+    <ul>
+      <div *ngFor="let arr of myArr">
+       <li> {{ arr.name }} --> <div *ngIf="arr.occupation=='Engineer'; then template1 else template2"></div> </li>
+      </div>
+    </ul>
+  </div>
+
+</div>
